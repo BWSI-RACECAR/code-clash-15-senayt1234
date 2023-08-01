@@ -43,17 +43,22 @@ class Solution:
             #TODO: Write code below to return an int tuples list with the solution to the prompt.
             intervals = tuple(sorted(intervals)) 
             index = 0
+            sub = 0
             new = []
             if len(intervals)==1:
                 new.append(intervals[0])
             if intervals == None:
                 return new 
-            while len(intervals)-1>index:
+            while len(intervals)>index:
                 x,y= intervals[index]
-                b,c = intervals[index+1]
-                if x==b or y==c:
-                     new.append(intervals[index])
-                     new.append(intervals[index]+1)
+                sub = 0
+                while len(intervals)>sub:
+                    b,c = intervals[sub]
+                    if sub != index:
+                        if x==b or y==c: 
+                            new.append(intervals[index])
+                            new.append(intervals[sub])
+                    sub = sub+1
                 index = index+1
             return new
 
