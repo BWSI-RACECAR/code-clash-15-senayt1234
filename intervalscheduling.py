@@ -41,7 +41,7 @@ class Solution:
             #return type: list of int tuples
             
             #TODO: Write code below to return an int tuples list with the solution to the prompt.
-            intervals.sort()
+            intervals = tuple(sorted(intervals)) 
             index = 0
             new = []
             while len(intervals)-1>index:
