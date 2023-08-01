@@ -44,6 +44,10 @@ class Solution:
             intervals = tuple(sorted(intervals)) 
             index = 0
             new = []
+            if len(intervals)==1:
+                new.append(intervals[0])
+            if intervals == None:
+                return new 
             while len(intervals)-1>index:
                 x,y= intervals[index]
                 b,c = intervals[index+1]
